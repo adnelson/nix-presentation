@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+  head
+    include ./head.jade
+
+  body.images-not-supported
+
+    #impress
+      include ./slides.jade
+
+    script(src="js/impress.js")
+    script impress().init();
