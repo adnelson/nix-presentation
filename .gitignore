@@ -4,3 +4,8 @@ css
 index.html
 favicon.ico
 images
+dist
+_node_modules
+nix-presentation.cabal
+**/*.bkup
+*.hs

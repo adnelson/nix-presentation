@@ -1,16 +1,78 @@
-#bored.step(data-x="-1000" data-y="-1500")
-  p Normal package managers are <i>problematic</i>.
+#title.step(data-x="0" data-y="0" data-scale="4")
+  // h4 introducing
+  h1.nix-name nix
+  h2 the purely functional package manager.
+
+.step(data-x="0" data-y="-1000")
+  p Nix does things quite differently from most package managers, and this gives it some distinct advantages.
+
+.step(data-x="1000" data-y="-5000" data-z="-5000")
+  h3 Immutable builds
+  p.substep Once packages are built, they don't change.
+  p.substep If the definition of a package changes from the last time it was built, it is treated as a <strong>new package</strong> instead.
+  p.substep This makes it very easy to reason about the state of packages on the system.
+
+.step(data-x="1000" data-y="-5000" data-z="-10000")
+  h3 No shared build location
+  p.substep Each package is built in its own folder.
+  p.substep Those folders are guaranteed to be distinct from each other.
+  p.substep The name of the folder is derivable from the definition of the package.
+  p.substep Coupled with the immutable builds rule, this means that the same package only needs to be built once.
+
+.step(data-x="1000" data-y="-5000" data-z="-15000")
+  h3 Turing complete, functional definition language
+  p.substep Nix packages are defined in a DSL (also called <span class="generic-code">nix</span>), which contains as first-class values, among other things:
+  ul
+    li.substep Numbers, booleans, strings
+    li.substep Lists
+    li.substep Dictionaries
+    li.substep Functions
+  p.substep This means that package definitions can be <i>parameterized</i> in the same way that you might generalize a piece of code by giving parameters to a function.
+
+//- .step(data-x="-1000" data-y="-1500")
+//-   p There are a number of challenges in package management.
+
+//- .step(data-x="0" data-y="-5000" data-z="-2500")
+//-   h3 Desire: Multiple package versions
+//-   ul
+//-     li.substep Package <span class="generic-code">foo</span> depends on package <span class="generic-code">qux</span> at version 1.
+//-     li.substep Package <span class="generic-code">bar</span> depends on <span class="generic-code">qux</span> at version 2.
+//-     li.substep Is it possible to install both at the same time?
+
+//- .step(data-x="1000" data-y="-5000" data-z="-2500" data-rotate-y="30")
+//-   h3 Problem: Globally shared folders
+//-   p.substep In most systems, packages get installed into a shared folder, such as <span class="generic-code">/usr</span> or <span class="generic-code">/usr/local</span>.
+//-   p.substep This means that if two packages expect to install <span class="generic-code">libqux.so</span> in <span class="generic-code">/usr/lib</span>, one of these packages is going to have a bad time.
+//-   p.substep And so will its dependencies!
+
+//- .step(data-x="1500" data-y="-5000" data-z="-2500" data-rotate-y="90")
+//-   h3 Solution: Globally <i>unique</i> folders
+//-   p Install each package into its own folder.
+//-   ul
+//-     li.substep The name of the folder is determined by the definition of the package.
+//-     // li.substep The definition of a package's dependencies is part of its definition, so changing any of them will also change the name.
+//-     li.substep When a package is being built, it has access to the folders all of its dependencies were built in, so it can use those folders to wire up the dependencies as needed.
+
+//- .step(data-x="0" data-y="-4500" data-z="-2250" data-rotate-y="25")
+//-   h3 System consistency
+//-   p What if you didn't realize that installing <span class="generic-code">qux</span> was going to mess up <span class="generic-code">foo</span>?
+//-   p This problem is <strong>hard to detect</strong>, <strong>hard to predict</strong>, and <strong>hard to repair</strong>.
+
+//- .step(data-x="0" data-y="-4000" data-z="-2000" data-rotate="20")
+//-   h3 Using unique folders
+//-   p Nix builds everything in a globally unique folder.
+
+.step(data-x="0" data-y="-3500" data-z="-1750" data-rotate="15")
+  p Point 4
+
+.step(data-x="0" data-y="-3000" data-z="-1500" data-rotate="10")
+  p Point 5
 
 .step(data-x="0" data-y="-1500")
   p They aren't pure, yo. That sucks.
 
 .step(data-x="1000" data-y="-1500")
   p How about a package manager that is <i>pure</i>, and <i>doesn't suck</i>?
-
-#title.step(data-x="0" data-y="0" data-scale="4")
-  h4 introducing
-  h1.nix-name nix
-  h2 the purely functional package manager.
 
 #its.step(data-x="850" data-y="3000" data-rotate="90" data-scale="5")
   p It's a <strong>package manager</strong>  utilizing the concepts of <strong>functional programming</strong> to achieve really awesome things.
@@ -23,7 +85,7 @@
 
 .step(data-x="6300" data-y="2000" data-rotate="20" data-scale="4")
   p want to know more?
-  q <a href="https://nixos.com/nix">Check out the website!
+  a(href="https://nixos.org/nix") Check out the website!
 
 #one-more-thing.step(data-x="6000" data-y="4000" data-scale="2")
   p One more thing...

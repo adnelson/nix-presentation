@@ -17,6 +17,6 @@
     "less": "*"
   },
   "scripts": {
-    "build": "PATH=node_modules/.bin:$PATH jade --pretty jade/index.jade -o . && rm -rf css && lessc --verbose less/nix-presentation.less css/nix-presentation.css"
+    "build": "PATH=node_modules/.bin:$PATH jade --pretty -o . --obj jade/objects.json jade/index.jade && rm -rf css && lessc --verbose less/nix-presentation.less css/nix-presentation.css"
   }
 }

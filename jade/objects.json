@@ -1,0 +1,13 @@
+{
+  "adjective": "shitty",
+  "situations": [
+    {
+      "situation": "Say you want to install more than one version of the same package at once.",
+      "examples": [
+        "python 2 and 3, or even multiple versions of each",
+        "python packages, like pandas or lxml",
+        "multiple versions of node or npm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+[submodule "Strut"]
+	path = Strut
+	url = git://github.com/tantaman/Strut.git
